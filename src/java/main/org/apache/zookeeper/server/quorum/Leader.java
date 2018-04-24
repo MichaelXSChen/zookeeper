@@ -439,6 +439,7 @@ public class Leader {
             self.tick.set(0);
             zk.loadData();
 
+            //xs: The state.
             leaderStateSummary = new StateSummary(self.getCurrentEpoch(), zk.getLastProcessedZxid());
 
             // Start thread that waits for connection requests from

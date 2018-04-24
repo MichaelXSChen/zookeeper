@@ -912,6 +912,9 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
     }
     synchronized public void startLeaderElection() {
         try {
+            //xs: the last input of the vote need to come from the SGX enclave
+
+
             if (getPeerState() == ServerState.LOOKING) {
                 currentVote = new Vote(myid, getLastLoggedZxid(), getCurrentEpoch());
             }
@@ -1108,6 +1111,7 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
         }
 
         try {
+            //xs: Here is the thread main loop.
             /*
              * Main loop
              */

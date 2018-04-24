@@ -867,6 +867,8 @@ public class FastLeaderElection implements Election {
      * changes its state to LOOKING, this method is invoked, and it
      * sends notifications to all other peers.
      */
+
+    //xs: this method is important.
     public Vote lookForLeader() throws InterruptedException {
         try {
             self.jmxLeaderElectionBean = new LeaderElectionBean();
